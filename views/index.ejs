@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
+    <script src="http://malsup.github.com/jquery.form.js"></script> 
+	<title>CSV to JSon</title>
+
+
+</head>
+
+<body>
+
+	<h2>Home Page</h2>
+	<form id="2020data">
+		<input type="file" name="csvFile">
+		<button type="submit" class="btn btn-default">Upload CSV File</button>
+	  </form>
+
+
+
+
+</body>
+
+</html>
+
+<script>
+$("#2020data").submit(function(e) {
+
+$.ajax({
+  url: "/converToJson",
+  type: "POST",
+  data: new FormData(this),
+  processData: false,
+  contentType: false
+});
+
+return false;
+});
+
+
+
+</script>
